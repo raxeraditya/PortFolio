@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { TechStack } from "../components/TechStack/TechStack";
 import { About } from "../components/About/About";
 import { ProfileImage } from "../components/Profile/ProfileImage";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
@@ -16,7 +17,7 @@ export function Home() {
               className="text-center md:text-left order-2 md:order-1"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Hi, I'm{" "}
+                Hi, I'm
                 <span className="text-blue-600 dark:text-blue-400">
                   Aditya Kushwah
                 </span>
@@ -51,12 +52,12 @@ export function Home() {
               With expertise in both frontend and backend development, I can
               help bring your ideas to life.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Get in Touch
-            </a>
+            </Link>
           </motion.div>
         </section>
       </div>

@@ -40,7 +40,7 @@ export const projects = [
     image: "/project/portfolio3d.png",
     technologies: ["React", "Vite"],
     github: "https://github.com/raxeraditya/3dPostfolioSite-onepage.git",
-    live: "https://raxeraditya.vercel.app/",
+    live: "https://raxeraditya2.vercel.app/",
   },
   {
     title: "Text-Saver-OneLiner",
@@ -58,6 +58,14 @@ export const projects = [
     technologies: ["React", "Vite"],
     github: "https://github.com/raxeraditya/Tic-Tac-Toe-TwoUser-Bot.git",
     live: "https://tic-tac-toe-37.vercel.app/",
+  },
+  {
+    title: "Simple 3d Portfolio",
+    description: "A Frontend web application built with React Vite",
+    image: "/project/simple3dportfolio.png",
+    technologies: ["React", "Vite"],
+    github: "https://github.com/raxeraditya/Simple3d-portfolio-site-.git",
+    live: "https://raxeraditya3.vercel.app/",
   },
   // Add more projects here
 ];

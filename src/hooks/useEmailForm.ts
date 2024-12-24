@@ -1,19 +1,8 @@
 import { useState } from "react";
-import { EmailData, sendEmail } from "../services/email";
+import { sendEmail } from "../services/email";
 
-interface UseEmailForm {
-  formData: EmailData;
-  status: "idle" | "sending" | "success" | "error";
-  error: string | null;
-  handleChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  handleSubmit: (e: React.FormEvent) => Promise<void>;
-  resetForm: () => void;
-}
-
-export function useEmailForm(): UseEmailForm {
-  const [formData, setFormData] = useState<EmailData>({
+export function useEmailForm() {
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -26,14 +15,7 @@ export function useEmailForm(): UseEmailForm {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const resetForm = () => {
-    setFormData({ name: "", email: "", message: "" });
-    setStatus("idle");
-    setError(null);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,21 +24,19 @@ export function useEmailForm(): UseEmailForm {
     setError(null);
 
     try {
+      // Replace this with your sendEmail function
       await sendEmail(formData);
       setStatus("success");
-      resetForm();
     } catch (err) {
+      setError("Failed to send email. Please try again.");
       setStatus("error");
-      setError("Failed to send message. Please try again.");
     }
   };
 
-  return {
-    formData,
-    status,
-    error,
-    handleChange,
-    handleSubmit,
-    resetForm,
+  const resetStatus = () => {
+    setStatus("idle");
+    setError(null);
   };
+
+  return { formData, status, error, handleChange, handleSubmit, resetStatus };
 }

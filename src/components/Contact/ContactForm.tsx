@@ -3,24 +3,38 @@ import { Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { useEmailForm } from "../../hooks/useEmailForm";
 
 export function ContactForm() {
-  const { formData, status, error, handleChange, handleSubmit } =
+  const { formData, status, error, handleChange, handleSubmit, resetStatus } =
     useEmailForm();
 
+  const handleRetry = () => {
+    if (status === "error") {
+      resetStatus(); // Reset status to allow resubmission
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      onSubmit={(e) => {
+        handleRetry(); // Reset before submit
+        handleSubmit(e);
+      }}
+      className="space-y-6"
+    >
+      {/* Input Fields */}
       <div className="relative">
         <input
           type="text"
           id="name"
           name="name"
           value={formData.name}
-          onChange={handleChange}
-          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent 
-             text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
+          onChange={(e) => {
+            resetStatus(); // Reset when the user types
+            handleChange(e);
+          }}
+          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
           placeholder=" "
           required
         />
-
         <label
           htmlFor="name"
           className="absolute left-2 -top-2.5 px-2 text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:left-4 peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-blue-500"
@@ -29,15 +43,18 @@ export function ContactForm() {
         </label>
       </div>
 
+      {/* Email and Message Fields (similar to above) */}
       <div className="relative">
         <input
           type="email"
           id="email"
           name="email"
           value={formData.email}
-          onChange={handleChange}
-          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent 
-             text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
+          onChange={(e) => {
+            resetStatus(); // Reset when the user types
+            handleChange(e);
+          }}
+          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
           placeholder=" "
           required
         />
@@ -54,14 +71,15 @@ export function ContactForm() {
           id="message"
           name="message"
           value={formData.message}
-          onChange={handleChange}
+          onChange={(e) => {
+            resetStatus(); // Reset when the user types
+            handleChange(e);
+          }}
           rows={4}
-          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent 
-             text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400 resize-none"
+          className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400 resize-none"
           placeholder=" "
           required
         />
-
         <label
           htmlFor="message"
           className="absolute left-2 -top-2.5 px-2 text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:left-4 peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-blue-500"
@@ -81,9 +99,10 @@ export function ContactForm() {
         </motion.div>
       )}
 
+      {/* Submit Button */}
       <motion.button
         type="submit"
-        disabled={status !== "idle"}
+        disabled={status === "sending"}
         className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -107,8 +126,10 @@ export function ContactForm() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="flex items-center gap-2"
             >
               <Loader2 className="w-5 h-5 animate-spin" />
+              <span>Sending...</span>
             </motion.div>
           )}
           {status === "success" && (
@@ -121,6 +142,18 @@ export function ContactForm() {
             >
               <CheckCircle className="w-5 h-5" />
               <span>Sent Successfully!</span>
+            </motion.div>
+          )}
+          {status === "error" && (
+            <motion.div
+              key="error"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex items-center gap-2"
+            >
+              <AlertCircle className="w-5 h-5" />
+              <span>Retry Send</span>
             </motion.div>
           )}
         </AnimatePresence>

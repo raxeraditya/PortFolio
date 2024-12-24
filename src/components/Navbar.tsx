@@ -1,17 +1,21 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
-import { Link, useLocation } from 'react-router-dom';
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/contact', label: 'Contact' },
+  { path: "/", label: "Home" },
+  { path: "/projects", label: "Projects" },
+  { path: "/contact", label: "Contact" },
 ];
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+  { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
+  { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/yourusername",
+    label: "LinkedIn",
+  },
 ];
 
 export function Navbar() {
@@ -27,27 +31,29 @@ export function Navbar() {
                 key={path}
                 to={path}
                 className={`text-sm font-medium transition-colors hover:text-blue-500 dark:hover:text-blue-400
-                  ${location.pathname === path 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-700 dark:text-gray-300'}`}
+                  ${
+                    location.pathname === path
+                      ? "text-blue-600 dark:text-blue-400"
+                      : "text-gray-700 dark:text-gray-300"
+                  }`}
               >
                 {label}
               </Link>
             ))}
           </div>
-          
+
           <div className="flex items-center space-x-4">
             {socialLinks.map(({ icon: Icon, href, label }) => (
-              <a
+              <Link
                 key={label}
-                href={href}
+                to={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
                 aria-label={label}
               >
                 <Icon className="w-5 h-5" />
-              </a>
+              </Link>
             ))}
             <ThemeToggle />
           </div>

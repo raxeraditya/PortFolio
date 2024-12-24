@@ -11,6 +11,12 @@ export interface EmailData {
 }
 
 export async function sendEmail(data: EmailData): Promise<void> {
+  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    throw new Error(
+      "Missing EmailJS configuration. Please check your environment variables."
+    );
+  }
+
   try {
     await emailjs.send(
       SERVICE_ID,
@@ -23,9 +29,11 @@ export async function sendEmail(data: EmailData): Promise<void> {
       },
       PUBLIC_KEY
     );
+    console.log("Email sent successfully!");
   } catch (error) {
-    // console.error("Email sending failed:", error);
-    throw new Error(`Failed to send email ${JSON.stringify(error)}`);
-    // console.log(`${JSON.stringify(error)}`);
+    console.error("Error sending email:", error);
+    throw new Error(
+      `Failed to send email. ${error instanceof Error ? error.message : error}`
+    );
   }
 }
