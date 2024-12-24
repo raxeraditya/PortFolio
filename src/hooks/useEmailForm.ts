@@ -11,6 +11,7 @@ export function useEmailForm() {
     "idle" | "sending" | "success" | "error"
   >("idle");
   const [error, setError] = useState<string | null>(null);
+  const [lastSent, setLastSent] = useState<number | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,6 +21,15 @@ export function useEmailForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const now = Date.now();
+
+    // Check if user needs to wait before sending another message
+    if (lastSent && now - lastSent < 8000) {
+      setError("Please wait 7 seconds before sending another message.");
+      return;
+    }
+
     setStatus("sending");
     setError(null);
 
@@ -27,6 +37,7 @@ export function useEmailForm() {
       // Replace this with your sendEmail function
       await sendEmail(formData);
       setStatus("success");
+      setLastSent(now); // Update last sent timestamp
     } catch (err) {
       setError("Failed to send email. Please try again.");
       setStatus("error");
