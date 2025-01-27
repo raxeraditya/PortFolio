@@ -9,6 +9,14 @@ export const projects = [
     live: "#",
   },
   {
+    title: "College Website",
+    description: "A Frontend web application built with React Vite",
+    image: "/project/College.png",
+    technologies: ["React", "Vite"],
+    github: "https://github.com/raxeraditya/CollegeWebsite.git",
+    live: "https://kkpg.vercel.app/",
+  },
+  {
     title: "WhatsApp-Clone",
     description: "A full-stack web application built with Mern Stack",
     image:
@@ -66,6 +74,14 @@ export const projects = [
     technologies: ["React", "Vite"],
     github: "https://github.com/raxeraditya/Simple3d-portfolio-site-.git",
     live: "https://raxeraditya3.vercel.app/",
+  },
+  {
+    title: "Quiz App",
+    description: "A Frontend web application built with React Vite",
+    image: "/project/quizApp.png",
+    technologies: ["React", "Vite"],
+    github: "https://github.com/raxeraditya/React_QuizeApp_TalwindCss.git",
+    live: "https://quizeapp-iota.vercel.app/",
   },
   // Add more projects here
 ];
