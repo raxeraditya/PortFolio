@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Menu } from "lucide-react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaBars,
+} from "react-icons/fa";
 import { ThemeToggle } from "../ThemeToggle";
 import { NavLink } from "./NavLink";
 import { RainbowText } from "./RainbowText";
@@ -14,13 +19,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/raxeraditya", label: "GitHub" },
-  { icon: Twitter, href: "https://twitter.com/k37aditya", label: "Twitter" },
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com/in/raxeraditya1",
-    label: "LinkedIn",
-  },
+  { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+  { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
 ];
 
 export function Navbar() {
@@ -67,7 +68,7 @@ export function Navbar() {
                 className="p-2 lg:hidden hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
                 aria-label="Open menu"
               >
-                <Menu className="w-6 h-6" />
+                <FaBars className="w-6 h-6" />
               </button>
             </div>
           </div>

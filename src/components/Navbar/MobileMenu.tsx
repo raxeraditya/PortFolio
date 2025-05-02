@@ -1,5 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 import { NavLink } from "./NavLink";
 import { RainbowText } from "./RainbowText";
 import { Link } from "react-router-dom";
@@ -43,7 +48,7 @@ export function MobileMenu({
                 className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <FaTimes className="w-6 h-6" />
               </button>
             </div>
 

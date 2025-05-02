@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, FileDown } from "lucide-react";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaDownload } from "react-icons/fa";
 import { ContactForm } from "../components/Contact/ContactForm";
 
 export function Contact() {
@@ -18,7 +18,7 @@ export function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-blue-500" />
+                <FaEnvelope className="w-6 h-6 text-blue-500" />
                 <div>
                   <h3 className="font-medium text-gray-900 dark:text-white">
                     Email
@@ -29,36 +29,36 @@ export function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-blue-500" />
+                <FaPhoneAlt className="w-6 h-6 text-blue-500" />
                 <div>
                   <h3 className="font-medium text-gray-900 dark:text-white">
                     Phone
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    +91 9760157737
+                    +91 8864824612, 9760157737
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <MapPin className="w-6 h-6 text-blue-500" />
+                <FaMapMarkerAlt className="w-6 h-6 text-blue-500" />
                 <div>
                   <h3 className="font-medium text-gray-900 dark:text-white">
                     Location
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Etawah, UttarPradesh
+                    Etawah, Uttar Pradesh
                   </p>
                 </div>
               </div>
 
               <motion.a
-                href="/DevResumeNew.pdf"
+                href="/ResumeWithCsjmuNielit.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FileDown className="w-5 h-5" />
+                <FaDownload className="w-5 h-5" />
                 <span>Download Resume</span>
               </motion.a>
             </div>

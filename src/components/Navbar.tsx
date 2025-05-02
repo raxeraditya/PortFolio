@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { ThemeToggle } from "./ThemeToggle";
 import { Link, useLocation } from "react-router-dom";
 
@@ -9,10 +9,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+  { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
+  { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
   {
-    icon: Linkedin,
+    icon: FaLinkedin,
     href: "https://linkedin.com/in/yourusername",
     label: "LinkedIn",
   },

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 import { projects } from "../Data/projectsData";
 
 export function Projects() {
@@ -52,7 +53,7 @@ export function Projects() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                   >
-                    <Github className="w-5 h-5" />
+                    <FaGithub className="w-5 h-5" />
                     <span>Code</span>
                   </a>
                   <a
@@ -61,7 +62,7 @@ export function Projects() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <FiExternalLink className="w-5 h-5" />
                     <span>Live Demo</span>
                   </a>
                 </div>

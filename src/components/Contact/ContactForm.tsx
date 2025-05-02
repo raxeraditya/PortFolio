@@ -1,5 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  FaPaperPlane,
+  FaSpinner,
+  FaCheckCircle,
+  FaExclamationCircle,
+} from "react-icons/fa";
 import { useEmailForm } from "../../hooks/useEmailForm";
 
 export function ContactForm() {
@@ -20,7 +25,7 @@ export function ContactForm() {
       }}
       className="space-y-6"
     >
-      {/* Input Fields */}
+      {/* Name Field */}
       <div className="relative">
         <input
           type="text"
@@ -28,7 +33,7 @@ export function ContactForm() {
           name="name"
           value={formData.name}
           onChange={(e) => {
-            resetStatus(); // Reset when the user types
+            resetStatus();
             handleChange(e);
           }}
           className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
@@ -43,7 +48,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      {/* Email and Message Fields (similar to above) */}
+      {/* Email Field */}
       <div className="relative">
         <input
           type="email"
@@ -51,7 +56,7 @@ export function ContactForm() {
           name="email"
           value={formData.email}
           onChange={(e) => {
-            resetStatus(); // Reset when the user types
+            resetStatus();
             handleChange(e);
           }}
           className="peer w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-black dark:text-white outline-none transition-colors focus:border-blue-500 dark:focus:border-blue-400"
@@ -66,13 +71,14 @@ export function ContactForm() {
         </label>
       </div>
 
+      {/* Message Field */}
       <div className="relative">
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={(e) => {
-            resetStatus(); // Reset when the user types
+            resetStatus();
             handleChange(e);
           }}
           rows={4}
@@ -88,13 +94,14 @@ export function ContactForm() {
         </label>
       </div>
 
+      {/* Error Message */}
       {error && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-red-500 text-sm flex items-center gap-2"
         >
-          <AlertCircle className="w-4 h-4" />
+          <FaExclamationCircle className="w-4 h-4" />
           <span>{error}</span>
         </motion.div>
       )}
@@ -116,7 +123,7 @@ export function ContactForm() {
               exit={{ opacity: 0 }}
               className="flex items-center gap-2"
             >
-              <Send className="w-5 h-5" />
+              <FaPaperPlane className="w-5 h-5" />
               <span>Send Message</span>
             </motion.div>
           )}
@@ -128,7 +135,7 @@ export function ContactForm() {
               exit={{ opacity: 0 }}
               className="flex items-center gap-2"
             >
-              <Loader2 className="w-5 h-5 animate-spin" />
+              <FaSpinner className="w-5 h-5 animate-spin" />
               <span>Sending...</span>
             </motion.div>
           )}
@@ -140,7 +147,7 @@ export function ContactForm() {
               exit={{ opacity: 0 }}
               className="flex items-center gap-2"
             >
-              <CheckCircle className="w-5 h-5" />
+              <FaCheckCircle className="w-5 h-5" />
               <span>Sent Successfully!</span>
             </motion.div>
           )}
@@ -152,7 +159,7 @@ export function ContactForm() {
               exit={{ opacity: 0 }}
               className="flex items-center gap-2"
             >
-              <AlertCircle className="w-5 h-5" />
+              <FaExclamationCircle className="w-5 h-5" />
               <span>Retry Send</span>
             </motion.div>
           )}

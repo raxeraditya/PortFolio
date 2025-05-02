@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Award } from "lucide-react";
+import { FaGraduationCap, FaBriefcase, FaAward } from "react-icons/fa";
 
 const experiences = [
   {
-    icon: GraduationCap,
+    icon: FaGraduationCap,
     title: "Education",
     items: [
       {
@@ -14,7 +14,7 @@ const experiences = [
     ],
   },
   {
-    icon: Briefcase,
+    icon: FaBriefcase,
     title: "Fresher && Freelancer",
     items: [
       {
@@ -22,15 +22,10 @@ const experiences = [
         place: "For Customer",
         year: "2022",
       },
-      // {
-      //   title: "Full Stack Developer",
-      //   place: "Previous Company",
-      //   year: "2020-2022",
-      // },
     ],
   },
   {
-    icon: Award,
+    icon: FaAward,
     title: "Certifications",
     items: [
       {
