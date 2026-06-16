@@ -1,9 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaTimes,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
 } from "react-icons/fa";
 import { NavLink } from "./NavLink";
 import { RainbowText } from "./RainbowText";
