@@ -4,17 +4,17 @@ const socialLinks = [
   {
     name: "GitHub",
     image: "/tech/github-icon.svg",
-    href: "https://github.com/raxeraditya",
+    href: "https://github.com/raxeraditya/",
   },
   {
     name: "LinkedIn",
     image: "/tech/linkedin-app-icon.svg",
-    href: "https://linkedin.com/in/raxeraditya1",
+    href: "https://www.linkedin.com/in/dreadaditya/",
   },
   {
     name: "Twitter",
     image: "/tech/twitter-color-icon.svg",
-    href: "https://twitter.com/k37aditya",
+    href: "https://x.com/raxeraditya",
   },
 ];
 

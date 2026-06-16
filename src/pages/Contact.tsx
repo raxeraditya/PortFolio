@@ -24,7 +24,7 @@ export function Contact() {
                     Email
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    aditya1596k@gmail.com
+                    work.aditya.dev@outlook.com
                   </p>
                 </div>
               </div>

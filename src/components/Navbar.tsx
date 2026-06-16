@@ -9,11 +9,19 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+  {
+    icon: FaGithub,
+    href: "https://github.com/raxeraditya",
+    label: "GitHub",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://x.com/raxeraditya",
+    label: "Twitter",
+  },
   {
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/dreadaditya",
     label: "LinkedIn",
   },
 ];

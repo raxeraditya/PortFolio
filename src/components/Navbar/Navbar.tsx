@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaBars,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaBars } from "react-icons/fa";
 import { ThemeToggle } from "../ThemeToggle";
 import { NavLink } from "./NavLink";
 import { RainbowText } from "./RainbowText";
@@ -19,9 +14,17 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+  { icon: FaGithub, href: "https://github.com/raxeraditya", label: "GitHub" },
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/in/dreadaditya",
+    label: "LinkedIn",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://twitter.com/raxeraditya",
+    label: "Twitter",
+  },
 ];
 
 export function Navbar() {

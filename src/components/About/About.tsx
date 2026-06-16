@@ -9,7 +9,7 @@ const experiences = [
       {
         title: "Bachelor of Science Degree",
         place: "Chhatrapati Shahu Ji Maharaj University",
-        year: "2023-2025",
+        year: "2023-2026",
       },
     ],
   },
@@ -52,11 +52,7 @@ export function About() {
 
           <div className="prose prose-lg dark:prose-invert mx-auto mb-12">
             <p className="text-gray-600 dark:text-gray-300">
-              I'm a passionate Full Stack Developer with over 4 years of working
-              experience in building web applications. I specialize in creating
-              scalable and maintainable solutions using modern technologies. My
-              approach combines technical expertise with a strong focus on user
-              experience.
+              I am a Mathematics student with a strong interest in Data Science and Analytics. After completing my O Level certification in 2024, I pursued advanced training through the UPSDM Data Scientist Program (2026). Through this program, I developed expertise in Python, Pandas, NumPy, Seaborn, data analysis, data visualization, and machine learning. I enjoy transforming raw data into meaningful insights and building machine learning solutions that support informed decision-making.
             </p>
           </div>
 

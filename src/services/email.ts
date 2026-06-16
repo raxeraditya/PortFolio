@@ -29,7 +29,7 @@ export async function sendEmail(data: EmailData): Promise<void> {
       },
       PUBLIC_KEY
     );
-    console.log("Email sent successfully!");
+    // console.log("Email sent successfully!");
   } catch (error) {
     console.error("Error sending email:", error);
     throw new Error(

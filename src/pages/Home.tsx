@@ -23,9 +23,11 @@ export function Home() {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300">
-                Full Stack Developer passionate about creating elegant solutions
-                to complex problems. Specialized in modern web technologies and
-                scalable applications.
+                Aspiring Data Scientist and Mathematics student passionate about
+                analyzing data and building intelligent solutions. Experienced
+                in Python, Pandas, NumPy, Seaborn, and machine learning, with a
+                strong interest in uncovering patterns and supporting
+                data-driven decision-making.
               </p>
             </motion.div>
 
