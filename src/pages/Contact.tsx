@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaDownload } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaDownload,
+} from "react-icons/fa";
 import { ContactForm } from "../components/Contact/ContactForm";
 
 export function Contact() {
@@ -14,7 +19,6 @@ export function Contact() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Get in Touch
           </h1>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6">
               <div className="flex items-center gap-4">

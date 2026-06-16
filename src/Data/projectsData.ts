@@ -1,5 +1,77 @@
 export const projects = [
   {
+    title: "PYTHON_NOTES",
+    description: "Simple html file which contains some notes of python",
+    image: "/project/python.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/PYTHON_NOTES",
+    live: "https://python-notes-rose.vercel.app/",
+  },
+  {
+    title: "CPP_NOTES",
+    description: "Simple html file which contains some notes of cpp",
+    image: "/project/cpp.png",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/CPP_NOTES",
+    live: "https://cpp-notes-nu.vercel.app/",
+  },
+  {
+    title: "MIX_NOTES",
+    description: "Simple html file which contains some notes of mixed",
+    image: "/project/mix.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/MIX_NOTES",
+    live: "https://mix-notes-ai.vercel.app/",
+  },
+  {
+    title: "SQL_NOTES",
+    description: "Simple html file which contains some notes of sql",
+    image: "/project/sql.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/SQL_NOTES",
+    live: "https://sql-notes-steel.vercel.app/",
+  },
+  {
+    title: "NUMPY_NOTES",
+    description: "Simple html file which contains some notes of numpy",
+    image: "/project/numpy.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/NUMPY_NOTES",
+    live: "https://numpy-notes.vercel.app/",
+  },
+  {
+    title: "PANDAS_NOTES",
+    description: "Simple html file which contains some notes of pandas",
+    image: "/project/pandas.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/PANDAS_NOTES",
+    live: "https://pandas-notes.vercel.app/",
+  },
+  {
+    title: "MATPLOTLIB_NOTES",
+    description: "Simple html file which contains some notes of matplotlib",
+    image: "/project/matplotlib.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/MATPLOTLIB_NOTES",
+    live: "https://matplotlib-notes.vercel.app/",
+  },
+  {
+    title: "SEABORN_NOTES",
+    description: "Simple html file which contains some notes of seaborn",
+    image: "/project/seaborn.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/SEABORN_NOTES",
+    live: "https://seaborn-notes-v1.vercel.app/",
+  },
+  {
+    title: "PLOTLY_NOTES",
+    description: "Simple html file which contains some notes of plotly",
+    image: "/project/plotly.jpg",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/raxeraditya/PLOTLY_NOTES",
+    live: "https://plotly-notes-v4.vercel.app/",
+  },
+  {
     title: "Instagram-Clone",
     description: "A full-stack web application built with Mern Stack",
     image:
@@ -83,6 +155,7 @@ export const projects = [
     github: "https://github.com/raxeraditya/React_QuizeApp_TalwindCss.git",
     live: "https://quizeapp-iota.vercel.app/",
   },
+
   // Add more projects here
 ];
 
